@@ -6,19 +6,20 @@ package nyc.c4q.abassawo;
 import java.util.Calendar;
 import java.util.Scanner;
 public class BirthdayCalculator {
+
     public static void main(String[] args) {
+
         Scanner Input = new Scanner(System.in);
 
-        Calendar rightNow = Calendar.getInstance();
+        Calendar rightNow = Calendar.getInstance();  //CurrentDate.
         int currentYear = rightNow.get(Calendar.YEAR);
         int currentMonth = rightNow.get(Calendar.MONTH);
         int currentDay = rightNow.get(Calendar.DATE);
         int dayOfYear = rightNow.get(Calendar.DAY_OF_YEAR);
-        int bMonth = 0;
-        int bDay = 0;
+
 
         Calendar bDayCal = Calendar.getInstance();
-        int daysLeft;
+        int bMonth = 0; int bDay = 0; int daysLeft;
 
         System.out.println("Please enter your birthday");
         System.out.println("What is the month? (1-12)");
@@ -28,7 +29,8 @@ public class BirthdayCalculator {
         bDayCal.set(currentYear, bMonth - 1, bDay);   //because java counts from 0.
 
         int bDay_dayOfYear = bDayCal.get(Calendar.DAY_OF_YEAR);
-        daysLeft= bDay_dayOfYear - dayOfYear;
+        
+        daysLeft= bDay_dayOfYear - dayOfYear;  //Initializing days left variable here.
         System.out.println("There are " + daysLeft + " days left until your birthday");
 
     }
